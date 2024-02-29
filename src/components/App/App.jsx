@@ -1,23 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { getFoodData } from "../../api/apiCalls";
 import HomePage from "../../pages/HomePage";
+import SearchPage from "../../pages/SearchPage";
 import NavBar from "../NavBar/NavBar";
 
 const App = () => {
-  useEffect(() => {
-    getFoodData("apple")
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
-  }, []);
-
   return (
     <div className="App">
       <NavBar />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchPage />} />
         </Routes>
       </main>
     </div>
