@@ -1,6 +1,14 @@
+import React, { useEffect } from 'react'
 import "./App.css";
+import { getFoodData } from "../../api/apiCalls";
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    getFoodData('apple')
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+  }, []);
+  
   return (
     <div className="App">
       <header className="App-header">
