@@ -1,11 +1,13 @@
 import './ProductItem.css';
-// need to still figure out what other details I want to include that are relevant 
 
 const ProductItem = ({ product }) => {
+  console.log(product)
   return (
     <div className="product-item">
-      <img src={product.image} alt={product.label} />
+      <img src={product.image || null} alt={product.label} />
       <h3>{product.label}</h3>
+      <p>Brand: {product.brand || 'No Brand'}</p>
+      <p>Category: {product.category}</p>
       <button className="add-cart-btn">Add to Cart</button>
     </div>
   );

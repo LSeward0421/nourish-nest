@@ -17,7 +17,9 @@ const getFoodData = async (searchTerm = '', nextPageUrl = '') => {
     return {
       products: data.hints.map(hint => ({
         image: hint.food.image || null,
-        label: hint.food.label
+        label: hint.food.label,
+        brand: hint.food.brand || null,
+        category: hint.food.category
       })),
       nextPageUrl: data._links?.next?.href || null,
     };

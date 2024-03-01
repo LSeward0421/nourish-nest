@@ -2,7 +2,8 @@ import { useState } from "react";
 import { getFoodData } from "../api/apiCalls";
 import SearchBar from "../components/SearchBar/SearchBar";
 import ProductList from "../components/ProductList/ProductList";
-import './SearchPage.css'
+import "./SearchPage.css";
+import { organizeProducts } from "../utils/utils";
 
 const SearchPage = () => {
   const [products, setProducts] = useState([]);
@@ -11,16 +12,12 @@ const SearchPage = () => {
   const [nextPageUrl, setNextPageUrl] = useState(null);
 
   const search = async (searchTerm) => {
-    console.log("Searching For: ", searchTerm);
     setLoading(true);
     setError("");
 
     try {
       const { products, nextPageUrl } = await getFoodData(searchTerm);
-      const sortedProducts = products.sort((a, b) =>
-        a.label.localeCompare(b.label)
-      );
-      setProducts(sortedProducts);
+      setProducts(organizeProducts(products));
       setNextPageUrl(nextPageUrl);
     } catch (error) {
       setError("Uh-oh! Something went wrong. Please try again.");
@@ -36,10 +33,7 @@ const SearchPage = () => {
     try {
       const { products: newProducts, nextPageUrl: newNextPageUrl } =
         await getFoodData(null, nextPageUrl);
-      const combinedProducts = [...products, ...newProducts].sort((a, b) =>
-        a.label.localeCompare(b.label)
-      );
-      setProducts(combinedProducts);
+        setProducts((prevProducts) => organizeProducts([...prevProducts, ...newProducts]));
       setNextPageUrl(newNextPageUrl);
     } catch (error) {
       setError("Failed to get more options. Please try again.");
@@ -54,7 +48,11 @@ const SearchPage = () => {
       {error && <p className="error-message">{error}</p>}
       <ProductList products={products} />
       {loading && <p>Loading...</p>}
-      {nextPageUrl && <button className="load-more-btn" onClick={loadMore}>Load More</button>}
+      {nextPageUrl && (
+        <button className="load-more-btn" onClick={loadMore}>
+          Load More
+        </button>
+      )}
     </div>
   );
 };
