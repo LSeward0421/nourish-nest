@@ -1,13 +1,13 @@
-import './CartItem.css';
+import "./CartItem.css";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, removeFromCart }) => {
   return (
     <div className="cart-item">
       <img src={item.image} alt={item.label} />
       <div>
         <h3>{item.label}</h3>
         <p>Quantity: {item.quantity}</p>
-        <button>X</button>
+        <button onClick={() => removeFromCart(item.id)}>x</button>
       </div>
     </div>
   );

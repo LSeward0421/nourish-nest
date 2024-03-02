@@ -6,13 +6,14 @@ import SearchPage from "../../pages/SearchPage";
 import NavBar from "../NavBar/NavBar";
 import CartPage from "../../pages/CartPage";
 
-
 const App = () => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (productToAdd) => {
     setCart((currentCartItems) => {
-      const itemIndex = currentCartItems.findIndex((item) => item.id === productToAdd.id);
+      const itemIndex = currentCartItems.findIndex(
+        (item) => item.id === productToAdd.id
+      );
       if (itemIndex > -1) {
         const newCart = [...currentCartItems];
         newCart[itemIndex].quantity = (newCart[itemIndex].quantity || 0) + 1;
@@ -22,15 +23,27 @@ const App = () => {
       }
     });
   };
-  
+
+  const removeFromCart = (productId) => {
+    setCart((currentCartItems) => {
+      return currentCartItems.filter((item) => item.id !== productId);
+    });
+  };
+
   return (
     <div className="App">
       <NavBar />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/search" element={<SearchPage addToCart={addToCart} />} />
-          <Route path="/cart" element={<CartPage cart={cart} />} />
+          <Route
+            path="/search"
+            element={<SearchPage addToCart={addToCart} />}
+          />
+          <Route
+            path="/cart"
+            element={<CartPage cart={cart} removeFromCart={removeFromCart} />}
+          />
         </Routes>
       </main>
     </div>

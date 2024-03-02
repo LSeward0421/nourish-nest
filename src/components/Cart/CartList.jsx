@@ -1,11 +1,11 @@
 import CartItem from "./CartItem";
-import './CartList.css';
+import "./CartList.css";
 
-const CartList = ({ cartItems }) => {
+const CartList = ({ cartItems, removeFromCart }) => {
   return (
     <div>
-      {cartItems.map(item => (
-        <CartItem key={item.id} item={item} />
+      {cartItems.map((item) => (
+        <CartItem key={item.id} item={item} removeFromCart={removeFromCart} />
       ))}
     </div>
   );
