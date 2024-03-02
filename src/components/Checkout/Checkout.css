@@ -1,0 +1,20 @@
+.checkout {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.checkout h2 {
+  margin: 0 0 16px 0;
+}
+
+.checkout button {
+  width: 100%;
+  padding: 8px;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
