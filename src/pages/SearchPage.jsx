@@ -17,8 +17,14 @@ const SearchPage = () => {
 
     try {
       const { products, nextPageUrl } = await getFoodData(searchTerm);
-      setProducts(organizeProducts(products));
-      setNextPageUrl(nextPageUrl);
+      if(products.length === 0) {
+        setError("No results found. Please try again.");
+        setProducts([]);
+        setNextPageUrl(null);
+      } else {
+        setProducts(organizeProducts(products));
+        setNextPageUrl(nextPageUrl);
+      }
     } catch (error) {
       setError("Uh-oh! Something went wrong. Please try again.");
     }

@@ -15,7 +15,6 @@ export const organizeProducts = (products) => {
 
 export const filterExemptCategories = (products) => {
   return products.filter(product => 
-    product.food.category !== 'generic-meals' && 
-    product.food.category !== 'fast-foods'
+    product.food.categoryLabel.toLowerCase() === 'food'
   );
 };

@@ -23,7 +23,7 @@ const getFoodData = async (searchTerm = '', nextPageUrl = '') => {
         image: hint.food.image || defaultImage,
         label: hint.food.label,
         brand: hint.food.brand || null,
-        category: hint.food.category
+        category: hint.food.category,
       })),
       nextPageUrl: data._links?.next?.href || null,
     };

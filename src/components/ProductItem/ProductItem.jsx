@@ -1,11 +1,16 @@
-import './ProductItem.css';
+import "./ProductItem.css";
+import defaultImage from "../../assets/NN_default_img.png";
 
 const ProductItem = ({ product }) => {
+  const handleError = (e) => {
+    e.target.src = defaultImage;
+  };
+
   return (
     <div className="product-item">
-      <img src={product.image || null} alt={product.label} />
+      <img src={product.image} onError={handleError} alt={product.label} />
       <h3>{product.label}</h3>
-      <p>Brand: {product.brand || 'No Brand'}</p>
+      <p>Brand: {product.brand || "No Brand"}</p>
       <p>Category: {product.category}</p>
       <button className="add-cart-btn">Add to Cart</button>
     </div>
@@ -13,6 +18,3 @@ const ProductItem = ({ product }) => {
 };
 
 export default ProductItem;
-
-
-// find a way to clean up the label without the comma, maybe add another util function??
