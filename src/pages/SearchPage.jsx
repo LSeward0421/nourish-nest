@@ -33,7 +33,7 @@ const SearchPage = () => {
     try {
       const { products: newProducts, nextPageUrl: newNextPageUrl } =
         await getFoodData(null, nextPageUrl);
-        setProducts((prevProducts) => organizeProducts([...prevProducts, ...newProducts]));
+      setProducts((prevProducts) => [...prevProducts, ...newProducts]);
       setNextPageUrl(newNextPageUrl);
     } catch (error) {
       setError("Failed to get more options. Please try again.");
@@ -49,7 +49,7 @@ const SearchPage = () => {
 
   return (
     <div>
-      <SearchBar onSearch={search} onClear={handleClearSearch}/>
+      <SearchBar onSearch={search} onClear={handleClearSearch} />
       {error && <p className="error-message">{error}</p>}
       <ProductList products={products} />
       {loading && <p>Loading...</p>}

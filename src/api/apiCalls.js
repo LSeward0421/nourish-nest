@@ -1,4 +1,5 @@
 import defaultImage from '../assets/NN_default_img.png'
+import { filterExemptCategories } from '../utils/utils';
 
 const getFoodData = async (searchTerm = '', nextPageUrl = '') => {
   try {
@@ -16,8 +17,9 @@ const getFoodData = async (searchTerm = '', nextPageUrl = '') => {
     }
     
     const data = await response.json();
+    const filteredProducts = filterExemptCategories(data.hints)
     return {
-      products: data.hints.map(hint => ({
+      products: filteredProducts.map(hint => ({
         image: hint.food.image || defaultImage,
         label: hint.food.label,
         brand: hint.food.brand || null,
