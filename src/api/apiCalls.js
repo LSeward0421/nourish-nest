@@ -1,3 +1,5 @@
+import defaultImage from '../assets/NN_default_img.png'
+
 const getFoodData = async (searchTerm = '', nextPageUrl = '') => {
   try {
     const appId = import.meta.env.VITE_API_ID;
@@ -16,7 +18,7 @@ const getFoodData = async (searchTerm = '', nextPageUrl = '') => {
     const data = await response.json();
     return {
       products: data.hints.map(hint => ({
-        image: hint.food.image || null,
+        image: hint.food.image || defaultImage,
         label: hint.food.label,
         brand: hint.food.brand || null,
         category: hint.food.category
