@@ -20,6 +20,7 @@ const getFoodData = async (searchTerm = '', nextPageUrl = '') => {
     const filteredProducts = filterExemptCategories(data.hints)
     return {
       products: filteredProducts.map(hint => ({
+        id: hint.food.foodId,
         image: hint.food.image || defaultImage,
         label: hint.food.label,
         brand: hint.food.brand || null,

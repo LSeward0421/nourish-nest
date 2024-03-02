@@ -1,7 +1,7 @@
 import "./ProductItem.css";
 import defaultImage from "../../assets/NN_default_img.png";
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, addToCart }) => {
   const handleError = (e) => {
     e.target.src = defaultImage;
   };
@@ -12,7 +12,7 @@ const ProductItem = ({ product }) => {
       <h3>{product.label}</h3>
       <p>Brand: {product.brand || "No Brand"}</p>
       <p>Category: {product.category}</p>
-      <button className="add-cart-btn">Add to Cart</button>
+      <button className="add-cart-btn" onClick={() => {addToCart(product)}}>Add to Cart</button>
     </div>
   );
 };

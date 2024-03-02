@@ -1,11 +1,11 @@
 import ProductItem from "../ProductItem/ProductItem";
 import './ProductList.css'
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, addToCart }) => {
   return (
     <div className="product-list">
       {products.map((product, index) => (
-        <ProductItem key={index} product={product} />
+        <ProductItem key={product.id} product={product} addToCart={addToCart} />
       ))}
     </div>
   );

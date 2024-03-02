@@ -5,7 +5,7 @@ import ProductList from "../components/ProductList/ProductList";
 import "./SearchPage.css";
 import { organizeProducts } from "../utils/utils";
 
-const SearchPage = () => {
+const SearchPage = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -57,7 +57,7 @@ const SearchPage = () => {
     <div>
       <SearchBar onSearch={search} onClear={handleClearSearch} />
       {error && <p className="error-message">{error}</p>}
-      <ProductList products={products} />
+      <ProductList products={products} addToCart={addToCart}  />
       {loading && <p>Loading...</p>}
       {nextPageUrl && (
         <button className="load-more-btn" onClick={loadMore}>
