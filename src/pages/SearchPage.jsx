@@ -42,9 +42,14 @@ const SearchPage = () => {
     setLoading(false);
   };
 
+  const handleClearSearch = () => {
+    setProducts([]);
+    setNextPageUrl(null);
+  };
+
   return (
     <div>
-      <SearchBar onSearch={search} />
+      <SearchBar onSearch={search} onClear={handleClearSearch}/>
       {error && <p className="error-message">{error}</p>}
       <ProductList products={products} />
       {loading && <p>Loading...</p>}

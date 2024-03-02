@@ -11,5 +11,3 @@ export const organizeProducts = (products) => {
   return Array.from(uniqueProducts.values()).sort((a, b) => a.label.localeCompare(b.label));
 };
 
-
-

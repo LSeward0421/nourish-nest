@@ -1,7 +1,6 @@
 import './ProductItem.css';
 
 const ProductItem = ({ product }) => {
-  console.log(product)
   return (
     <div className="product-item">
       <img src={product.image || null} alt={product.label} />
@@ -14,3 +13,6 @@ const ProductItem = ({ product }) => {
 };
 
 export default ProductItem;
+
+
+// find a way to clean up the label without the comma, maybe add another util function??

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, onClear }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -10,6 +10,12 @@ const SearchBar = ({ onSearch }) => {
     if (errorMessage) {
       setErrorMessage("");
     }
+  };
+
+  const clearSearch = () => {
+    setSearchTerm("");
+    setErrorMessage("");
+    onClear("");
   };
 
   const validateSearchTerm = () => {
@@ -41,7 +47,8 @@ const SearchBar = ({ onSearch }) => {
           placeholder="Search for food..."
           aria-label="Search"
         />
-        <button type="submit">Search</button>
+        <button type="button" onClick={clearSearch} className="clear-btn">X</button>
+        <button type="submit" className="search-btn">Search</button>
       </div>
       {errorMessage && <div className="search-error-message">{errorMessage}</div>}
     </form>
