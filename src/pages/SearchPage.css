@@ -1,4 +1,7 @@
 .load-more-btn {
+  display: block;
+  max-width: max-content;
+  margin: 20px auto;
   padding: 10px 25px;
   font-size: 16px;
   color: #fff;
@@ -18,4 +21,8 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-
+.error-message {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
