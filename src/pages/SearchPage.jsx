@@ -14,6 +14,7 @@ const SearchPage = ({ addToCart }) => {
   const search = async (searchTerm) => {
     setLoading(true);
     setError("");
+    setProducts([]);
 
     try {
       const { products, nextPageUrl } = await getFoodData(searchTerm);
