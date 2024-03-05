@@ -21,6 +21,13 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+.loading-msg {
+  text-align: center;
+  width: 100%;
+  margin: 20px auto;
+  font-size: 1.2rem;
+}
+
 .error-message {
   text-align: center;
   width: 100%;

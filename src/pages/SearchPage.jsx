@@ -59,7 +59,7 @@ const SearchPage = ({ addToCart }) => {
       <SearchBar onSearch={search} onClear={handleClearSearch} />
       {error && <p className="error-message">{error}</p>}
       <ProductList products={products} addToCart={addToCart}  />
-      {loading && <p>Loading...</p>}
+      {loading && <p className="loading-msg">Loading...</p>}
       {nextPageUrl && (
         <button className="load-more-btn" onClick={loadMore}>
           Load More

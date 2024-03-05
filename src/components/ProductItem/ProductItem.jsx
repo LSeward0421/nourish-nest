@@ -23,9 +23,11 @@ const ProductItem = ({ product, addToCart }) => {
   return (
     <div className="product-item">
       <img src={product.image} onError={handleError} alt={product.label} />
+      <div className="product-item-details">
       <h3>{product.label}</h3>
-      <p>Brand: {product.brand || "No Brand"}</p>
-      <p>Category: {product.category}</p>
+      <p className="brand">{product.brand || "No Brand"}</p>
+      <p className="category">{product.category}</p>
+      </div>
       <button
         className={`add-cart-btn ${buttonClass}`}
         onClick={handleAddToCart}
