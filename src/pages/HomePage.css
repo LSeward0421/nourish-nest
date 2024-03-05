@@ -1,6 +1,10 @@
 .home-container {
   text-align: center;
   padding: 2rem;
+  background-image: url('../assets/NN\ Home\ Background.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 .home-title {
@@ -11,15 +15,15 @@
 
 .home-msg {
   color: #666;
-  font-size: 1rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
 
 .home-search-btn {
   padding: 10px 20px;
-  font-size: 1rem;
-  color: white;
-  background-color: #4CAF50;
+  font-size: 1.25rem;
+  color: #ffffff;
+  background-color: #114d2a;
   border: none;
   border-radius: 5px;
   cursor: pointer;

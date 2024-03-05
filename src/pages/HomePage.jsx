@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="home-container">
       <h1 className="home-title">Welcome to Nourish Nest!</h1>
-      <p className="home-msg">Find fresh groceries and more for your healthy lifestyle.</p>
+      <p className="home-msg">Search for fresh groceries and more, delivered right to your door.</p>
       <button className="home-search-btn" onClick={() => navigate("/search")}>Start Shopping!</button>
     </div>
   );
