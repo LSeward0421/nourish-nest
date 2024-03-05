@@ -1,7 +1,21 @@
+import { useState } from "react";
 import "./ProductItem.css";
 import defaultImage from "../../assets/NN_default_img.png";
 
 const ProductItem = ({ product, addToCart }) => {
+  const [buttonText, setButtonText] = useState("Add to Cart");
+  const [buttonClass, setButtonClass] = useState("");
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    setButtonText("Added!");
+    setButtonClass("animate");
+
+    setTimeout(() => {
+      setButtonText("Add to Cart");
+      setButtonClass("");
+    }, 2000);
+  };
   const handleError = (e) => {
     e.target.src = defaultImage;
   };
@@ -12,7 +26,12 @@ const ProductItem = ({ product, addToCart }) => {
       <h3>{product.label}</h3>
       <p>Brand: {product.brand || "No Brand"}</p>
       <p>Category: {product.category}</p>
-      <button className="add-cart-btn" onClick={() => {addToCart(product)}}>Add to Cart</button>
+      <button
+        className={`add-cart-btn ${buttonClass}`}
+        onClick={handleAddToCart}
+      >
+        {buttonText}
+      </button>
     </div>
   );
 };
