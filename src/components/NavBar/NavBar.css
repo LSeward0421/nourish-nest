@@ -5,10 +5,11 @@
   padding: 1rem;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .navbar-logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #4CAF50;
   text-decoration: none;
 }
@@ -22,11 +23,9 @@
   text-decoration: none;
   color: #333;
   font-size: 1rem;
-}
-
-.navbar-link:not(:last-child) {
   margin-right: 1rem;
 }
+
 
 .navbar-link:hover {
   color: #4CAF50;
@@ -36,6 +35,9 @@
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
   }
   
   .navbar-links {
@@ -47,5 +49,13 @@
   .navbar-link {
     width: 100%;
     text-align: center;
+    padding: 0.5rem 0;
+    margin: 0;
+    border-bottom: 3px solid #f1f1f1;
   }
 }
+
+.navbar-link:last-child {
+  border-bottom: none;
+}
+
