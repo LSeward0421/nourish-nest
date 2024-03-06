@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #eee;
-  padding: 16px;
+  padding: 10px;
   gap: 25px;
   margin: auto;
   width: 100%;
@@ -32,6 +32,12 @@
   white-space: no-wrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.cart-item-brand {
+  font-size: 1.1rem; 
+  font-style: italic; 
+  margin-top: 0.25rem;
 }
 
 .cart-item button {
