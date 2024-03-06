@@ -5,6 +5,7 @@ import SearchPage from '../../pages/SearchPage/SearchPage';
 import NavBar from '../NavBar/NavBar';
 import CartPage from '../../pages/CartPage/CartPage';
 import ConfirmationPage from '../../pages/ConfirmationPage/ConfirmationPage';
+import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -45,6 +46,7 @@ const App = () => {
             element={<CartPage cart={cart} removeFromCart={removeFromCart} />}
           />
           <Route path='/confirmation' element={<ConfirmationPage />} />
+          <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </main>
     </div>
