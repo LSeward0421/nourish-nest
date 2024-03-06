@@ -1,6 +1,7 @@
 <p align="center">
-<img src="../nourish-nest/src/assets/NN_default_img.png" alt="NourishNest Logo" title="Nourish Nest Logo" width="200"/>
+  <img src="https://github.com/LSeward0421/nourish-nest/assets/114787710/7effb2e9-72e1-4571-9e1d-26dce3ba423d" alt="Nourish Nest Defualt Logo" width="200px">
 </p>
+
 
 # NourishNest 🌱
 
@@ -26,7 +27,7 @@ The goal of NourishNest is to simulate the experience of digital grocery shoppin
 
 ## Deployment 🌐
 
-The application is deployed and available live at: [NourishNest Live](#)
+The application is deployed and available live at: [NourishNest Live](https://nourish-nest.vercel.app/)
 
 ## Setup Instructions 🚀
 
