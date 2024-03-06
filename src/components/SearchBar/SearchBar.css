@@ -11,7 +11,7 @@
   max-width: 400px;
 }
 
-.search-bar input[type="text"] {
+.search-bar input[type='text'] {
   width: 100%;
   max-width: 400px;
   padding: 10px 15px;

@@ -4,16 +4,23 @@
   align-items: center;
   flex: 1;
   gap: 10px;
-  padding: 10px;
+  padding: 15px;
   background-color: #f7f7f7;
   border: 1px solid #ccc;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 100%;
   max-width: 300px;
+  height: fit-content;
   margin: 30px auto;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.checkout h3 {
+  color: #4caf50;
+  text-align: center;
+  margin: 0 20px;
+}
 .checkout h2 {
   color: #2a5d34;
   text-align: center;
@@ -21,6 +28,7 @@
 }
 
 .checkout input {
+  width: 200px;
   padding: 12px;
   border: 2px solid #d9d9d9;
   border-radius: 6px;
@@ -49,4 +57,3 @@
 .checkout button:hover {
   transform: translateY(2px);
 }
-

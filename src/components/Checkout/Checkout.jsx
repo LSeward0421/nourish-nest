@@ -27,73 +27,74 @@ const Checkout = ({ cartItems }) => {
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <form className="checkout" onSubmit={handlePurchase}>
+    <form className='checkout' onSubmit={handlePurchase}>
+      <h3>Checkout</h3>
       <h2>Total Items: {totalQuantity}</h2>
       <input 
-        type="text" 
-        placeholder="First Name" 
-        name="firstName" 
+        type='text' 
+        placeholder='First Name' 
+        name='firstName' 
         value={checkoutForm.firstName} 
         onChange={handleInputChange}
         required 
       />
       <input 
-        type="text" 
-        placeholder="Last Name" 
-        name="lastName" 
+        type='text' 
+        placeholder='Last Name' 
+        name='lastName' 
         value={checkoutForm.lastName} 
         onChange={handleInputChange}
         required 
       />
       <input 
-        type="email" 
-        placeholder="Email" 
-        name="email" 
+        type='email' 
+        placeholder='Email' 
+        name='email' 
         value={checkoutForm.email} 
         onChange={handleInputChange}
         required 
       />
       <input 
-        type="text" 
-        placeholder="Address" 
-        name="address" 
+        type='text' 
+        placeholder='Address' 
+        name='address' 
         value={checkoutForm.address} 
         onChange={handleInputChange}
         required 
       />
       <input 
-        type="text" 
-        placeholder="City" 
-        name="city" 
+        type='text' 
+        placeholder='City' 
+        name='city' 
         value={checkoutForm.city} 
         onChange={handleInputChange}
         required 
       />
       <input 
-        type="text" 
-        placeholder="State/Province" 
-        name="state" 
+        type='text' 
+        placeholder='State/Province' 
+        name='state' 
         value={checkoutForm.state} 
         onChange={handleInputChange}
         required 
       />
       <input 
-        type="text" 
-        placeholder="ZIP/Postal Code" 
-        name="zip" 
+        type='text' 
+        placeholder='ZIP/Postal Code' 
+        name='zip' 
         value={checkoutForm.zip} 
         onChange={handleInputChange}
         required 
       />
       <input 
-        type="text" 
-        placeholder="Country" 
-        name="country" 
+        type='text' 
+        placeholder='Country' 
+        name='country' 
         value={checkoutForm.country} 
         onChange={handleInputChange}
         required 
       />
-      <button type="submit">Confirm Purchase</button>
+      <button type='submit'>Confirm Purchase</button>
     </form>
   );
 };

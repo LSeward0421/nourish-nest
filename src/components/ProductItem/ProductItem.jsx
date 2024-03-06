@@ -1,19 +1,19 @@
-import { useState } from "react";
-import "./ProductItem.css";
-import defaultImage from "../../assets/NN_default_img.png";
+import { useState } from 'react';
+import './ProductItem.css';
+import defaultImage from '../../assets/NN_default_img.png';
 
 const ProductItem = ({ product, addToCart }) => {
-  const [buttonText, setButtonText] = useState("Add to Cart");
-  const [buttonClass, setButtonClass] = useState("");
+  const [buttonText, setButtonText] = useState('Add to Cart');
+  const [buttonClass, setButtonClass] = useState('');
 
   const handleAddToCart = () => {
     addToCart(product);
-    setButtonText("Added!");
-    setButtonClass("animate");
+    setButtonText('Added!');
+    setButtonClass('animate');
 
     setTimeout(() => {
-      setButtonText("Add to Cart");
-      setButtonClass("");
+      setButtonText('Add to Cart');
+      setButtonClass('');
     }, 2000);
   };
   const handleError = (e) => {
@@ -21,12 +21,12 @@ const ProductItem = ({ product, addToCart }) => {
   };
 
   return (
-    <div className="product-item">
+    <div className='product-item'>
       <img src={product.image} onError={handleError} alt={product.label} />
-      <div className="product-item-details">
+      <div className='product-item-details'>
       <h3>{product.label}</h3>
-      <p className="brand">{product.brand || "No Brand"}</p>
-      <p className="category">{product.category}</p>
+      <p className='brand'>{product.brand || 'No Brand'}</p>
+      <p className='category'>{product.category}</p>
       </div>
       <button
         className={`add-cart-btn ${buttonClass}`}

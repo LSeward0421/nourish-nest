@@ -1,25 +1,25 @@
-import { useState } from "react";
-import { getFoodData } from "../api/apiCalls";
-import SearchBar from "../components/SearchBar/SearchBar";
-import ProductList from "../components/ProductList/ProductList";
-import "./SearchPage.css";
-import { organizeProducts } from "../utils/utils";
+import { useState } from 'react';
+import { getFoodData } from '../../api/apiCalls';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import ProductList from '../../components/ProductList/ProductList';
+import './SearchPage.css';
+import { organizeProducts } from '../../utils/utils';
 
 const SearchPage = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [nextPageUrl, setNextPageUrl] = useState(null);
 
   const search = async (searchTerm) => {
     setLoading(true);
-    setError("");
+    setError('');
     setProducts([]);
 
     try {
       const { products, nextPageUrl } = await getFoodData(searchTerm);
       if(products.length === 0) {
-        setError("No results found. Please try again.");
+        setError('No results found. Please try again.');
         setProducts([]);
         setNextPageUrl(null);
       } else {
@@ -27,7 +27,7 @@ const SearchPage = ({ addToCart }) => {
         setNextPageUrl(nextPageUrl);
       }
     } catch (error) {
-      setError("Uh-oh! Something went wrong. Please try again.");
+      setError('Uh-oh! Something went wrong. Please try again.');
     }
     setLoading(false);
   };
@@ -35,7 +35,7 @@ const SearchPage = ({ addToCart }) => {
   const loadMore = async () => {
     if (!nextPageUrl || loading) return;
     setLoading(true);
-    setError("");
+    setError('');
 
     try {
       const { products: newProducts, nextPageUrl: newNextPageUrl } =
@@ -43,8 +43,8 @@ const SearchPage = ({ addToCart }) => {
       setProducts((prevProducts) => [...prevProducts, ...newProducts]);
       setNextPageUrl(newNextPageUrl);
     } catch (error) {
-      setError("Failed to get more options. Please try again.");
-      console.error("Load more error:", error);
+      setError('Failed to get more options. Please try again.');
+      console.error('Load more error:', error);
     }
     setLoading(false);
   };
@@ -57,11 +57,11 @@ const SearchPage = ({ addToCart }) => {
   return (
     <div>
       <SearchBar onSearch={search} onClear={handleClearSearch} />
-      {error && <p className="error-message">{error}</p>}
+      {error && <p className='error-message'>{error}</p>}
       <ProductList products={products} addToCart={addToCart}  />
-      {loading && <p className="loading-msg">Loading...</p>}
+      {loading && <p className='loading-msg'>Loading...</p>}
       {nextPageUrl && (
-        <button className="load-more-btn" onClick={loadMore}>
+        <button className='load-more-btn' onClick={loadMore}>
           Load More
         </button>
       )}

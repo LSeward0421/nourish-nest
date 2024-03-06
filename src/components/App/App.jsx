@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import HomePage from "../../pages/HomePage";
-import SearchPage from "../../pages/SearchPage";
-import NavBar from "../NavBar/NavBar";
-import CartPage from "../../pages/CartPage";
-import ConfirmationPage from "../../pages/ConfirmationPage";
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from '../../pages/HomePage/HomePage';
+import SearchPage from '../../pages/SearchPage/SearchPage';
+import NavBar from '../NavBar/NavBar';
+import CartPage from '../../pages/CartPage/CartPage';
+import ConfirmationPage from '../../pages/ConfirmationPage/ConfirmationPage';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -32,20 +31,20 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className='App'>
       <NavBar />
       <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path='/' element={<HomePage />} />
           <Route
-            path="/search"
+            path='/search'
             element={<SearchPage addToCart={addToCart} />}
           />
           <Route
-            path="/cart"
+            path='/cart'
             element={<CartPage cart={cart} removeFromCart={removeFromCart} />}
           />
-          <Route path="/confirmation" element={<ConfirmationPage />} />
+          <Route path='/confirmation' element={<ConfirmationPage />} />
         </Routes>
       </main>
     </div>

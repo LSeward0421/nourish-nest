@@ -2,7 +2,7 @@ export const organizeProducts = (products) => {
   const uniqueProducts = new Map();
   
   products.forEach((product) => {
-    const key = `${product.label}-${product.brand || "Generic"}`;
+    const key = `${product.label}-${product.brand || 'Generic'}`;
     if (!uniqueProducts.has(key)) {
       uniqueProducts.set(key, product);
     }
