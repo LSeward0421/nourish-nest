@@ -9,7 +9,7 @@
 Welcome to NourishNest, the digital mockup of a grocery store that brings the convenience of shopping for fresh groceries right to your fingertips. Developed as part of a week-long challenge, this React.js application is designed to showcase front-end web development skills, with a focus on user experience and interaction with the Edamam Food Database API.
 
 ## Objective
-The goal of NourishNest is to simulate the experience of digital grocery shopping, from product search to cart management and initiating a mock purchase. It is an opportunity to demonstrate the ability to design and implement user-friendly web applications using modern development practices.
+The goal of NourishNest is to simulate the experience of digital grocery shopping, from product search to cart management and initiating a mock purchase.
 
 ## Technologies 🛠️
 - React.js
